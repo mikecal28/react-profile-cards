@@ -1,0 +1,40 @@
+html {
+  @include box(100%);
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @include box(100%);
+    font-family: sans-serif;
+
+    #root {
+      @include grid("header, body, footer", 1fr, 100% 1fr 100%);
+      @include box(100%);
+
+      .app {
+        @include box(100%);
+
+        .header-offset {
+          grid-area: header;
+          @include box(100%, 10%);
+        }
+
+        .profile-card-container {
+          grid-area: body;
+          background-color: $eggshell;
+          // height: 100%;
+          @include flex();
+        }
+
+        .footer-offset {
+          grid-area: footer;
+          @include box(100%, 15%);
+        }
+      }
+    }
+  }
+}

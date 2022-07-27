@@ -1,0 +1,22 @@
+.nav-footer {
+  @include box(100%, 15%);
+  @include flex(cn);
+  background-color: $space-cadet;
+  color: $eggshell;
+  @include fxd-position(null, null, 0px);
+  z-index: 2;
+
+  .nav-buttons {
+    @include padding(null, 5%, null, null);
+
+    button {
+      @include button($antique-brass);
+    }
+  }
+
+  .copyright {
+    @include flex();
+    @include box(70%, 100%);
+    border: 3px solid $eggshell;
+  }
+}

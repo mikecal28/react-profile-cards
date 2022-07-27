@@ -16,7 +16,7 @@
   }
 }
 
-@mixin flex($direction: row wrap, $justify: center, $align: center) {
+@mixin flex($direction: r, $justify: center, $align: center) {
   display: flex;
 
   @if $direction==c {
@@ -105,7 +105,7 @@
   }
 }
 
-@mixin abs-position($top, $right, $bottom, $left) {
+@mixin abs-position($top: null, $right: null, $bottom: null, $left: null) {
   position: absolute;
   top: $top;
   right: $right;
@@ -113,8 +113,16 @@
   left: $left;
 }
 
-@mixin rel-position($top, $right, $bottom, $left) {
+@mixin rel-position($top: null, $right: null, $bottom: null, $left: null) {
   position: relative;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fxd-position($top: null, $right: null, $bottom: null, $left: null) {
+  position: fixed;
   top: $top;
   right: $right;
   bottom: $bottom;
@@ -161,14 +169,27 @@
 //   @include _directional-property(margin, null, $values);
 // }
 
-@mixin padding($top, $right, $bottom, $left) {
+@mixin border(
+  $color: black,
+  $border-top: 1px solid,
+  $border-right: $border-top,
+  $border-bottom: $border-top,
+  $border-left: $border-top
+) {
+  border-top: $border-top $color;
+  border-right: $border-right $color;
+  border-bottom: $border-bottom $color;
+  border-left: $border-left $color;
+}
+
+@mixin padding($top, $right, $bottom: $top, $left: $right) {
   padding-top: $top;
   padding-right: $right;
   padding-bottom: $bottom;
   padding-left: $left;
 }
 //Margin mixin
-@mixin margin($top, $right, $bottom, $left) {
+@mixin margin($top, $right, $bottom: $top, $left: $right) {
   margin-top: $top;
   margin-right: $right;
   margin-bottom: $bottom;
@@ -208,7 +229,7 @@
   touch-action: manipulation;
 
   &:hover {
-    background-color: shade($color, 25%);
+    background-color: shade($color, 3%);
   }
 
   &:focus {

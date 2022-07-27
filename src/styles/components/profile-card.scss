@@ -1,0 +1,17 @@
+.profile-card {
+  width: max(20%, 280px);
+  height: 450px;
+  @include flex(cn);
+  // flex: 1 0 1;
+
+  .image-wrapper {
+    @include box(250px);
+    clip-path: ellipse(35% 40% at 50% 50%);
+    background-color: black;
+
+    img {
+      @include box(250px);
+      object-fit: cover;
+    }
+  }
+}
