@@ -4,20 +4,24 @@
   @include box(100%, 10%);
   @include flex(rn, space-between, flex-start);
   @include padding(20px, 200px, null, 20px);
-  background-color: $space-cadet;
-  color: $eggshell;
+  background-color: $black;
+  color: $gold-crayola;
+  // box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
   .logo {
     @include padding(5px, null, 5px, null);
-    @include border($eggshell, 2px solid, null, 2px solid, null);
+    @include border($gold-crayola, 2px solid, null, 2px solid, null);
   }
 
   .nav-buttons {
     @include flex(rn);
     align-self: flex-end;
+    gap: 1px;
+    margin-bottom: 5px;
 
     button {
-      @include button($antique-brass);
+      @include button(false, $han-blue);
+      color: $black;
     }
   }
 }

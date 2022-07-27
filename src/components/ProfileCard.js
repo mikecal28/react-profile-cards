@@ -13,12 +13,15 @@ class ProfileCard extends Component {
   }
   render() {
     return (
-      <div className="profile-card">
-        <div className="image-wrapper">
-          <img src={this.state.photo} alt={this.state.alt}></img>
+      <div className="profile-card-wrapper">
+        <div className="profile-card">
+          <div className="image-wrapper">
+            <img src={this.state.photo} alt={this.state.alt}></img>
+          </div>
+          <h3>{this.state.name}</h3>
+          <p>{this.state.description}</p>
         </div>
-        <h3>{this.state.name}</h3>
-        <p>{this.state.description}</p>
+        <button>Action</button>
       </div>
     );
   }

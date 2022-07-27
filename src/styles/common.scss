@@ -1,5 +1,19 @@
 html {
   @include box(100%);
+  background-color: shade($gold-crayola, 15%);
+  scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    width: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 0px;
+  }
 
   * {
     margin: 0;
@@ -10,6 +24,7 @@ html {
   body {
     @include box(100%);
     font-family: sans-serif;
+    overscroll-behavior: none;
 
     #root {
       @include grid("header, body, footer", 1fr, 100% 1fr 100%);
@@ -25,9 +40,10 @@ html {
 
         .profile-card-container {
           grid-area: body;
-          background-color: $eggshell;
-          // height: 100%;
+          background-color: $black-coral;
           @include flex();
+          @include padding(20px, null, 20px, null);
+          row-gap: 40px;
         }
 
         .footer-offset {

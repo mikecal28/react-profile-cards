@@ -1,17 +1,43 @@
-.profile-card {
-  width: max(20%, 280px);
-  height: 450px;
+.profile-card-wrapper {
+  max-height: 480px;
   @include flex(cn);
-  // flex: 1 0 1;
 
-  .image-wrapper {
-    @include box(250px);
-    clip-path: ellipse(35% 40% at 50% 50%);
-    background-color: black;
+  .profile-card {
+    min-height: 380px;
+    max-width: 240px;
+    @include flex(cn, flex-start);
+    @include padding(5px, 15px, 5px, 15px);
+    @include margin(5px);
+    @include border(shade($gold-crayola, 30%));
+    // background-color: shade($black, 10%);
+    background-color: $auburn;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-    img {
+    .image-wrapper {
       @include box(250px);
-      object-fit: cover;
+      clip-path: ellipse(35% 40% at 50% 50%);
+
+      img {
+        @include box(250px);
+        object-fit: cover;
+      }
     }
+
+    p {
+      overscroll-behavior: none;
+      height: 100px;
+      overflow-y: scroll;
+      mask: linear-gradient(to top, transparent 20%, #fff 80%);
+      padding-bottom: 30px;
+    }
+  }
+
+  button {
+    @include button(true, $black) {
+      @include box(5em, 2em);
+    }
+    color: $gold-crayola;
+    @include margin(40px, null, 20px, null);
   }
 }

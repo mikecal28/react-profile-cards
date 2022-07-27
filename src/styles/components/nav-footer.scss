@@ -1,22 +1,28 @@
 .nav-footer {
   @include box(100%, 15%);
   @include flex(cn);
-  background-color: $space-cadet;
-  color: $eggshell;
+  background-color: $black;
+  color: $black;
   @include fxd-position(null, null, 0px);
   z-index: 2;
+  // box-shadow: rgba(0, 0, 0, 0.45) 0px -25px 15px -20px;
 
   .nav-buttons {
+    @include flex(rn);
     @include padding(null, 5%, null, null);
+    gap: 1px;
+    @include margin(5px, null);
 
     button {
-      @include button($antique-brass);
+      @include button(false, $han-blue);
+      color: $black;
     }
   }
 
   .copyright {
     @include flex();
     @include box(70%, 100%);
-    border: 3px solid $eggshell;
+    border: 3px solid $han-blue;
+    color: $han-blue;
   }
 }

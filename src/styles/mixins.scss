@@ -161,6 +161,15 @@
   }
 }
 
+@function lighten($color, $percent) {
+  @if not _is-color($color) {
+    @error "`#{$color}` is not a valid color for the `$color` argument in " +
+      "the `shade` mixin.";
+  } @else {
+    @return mix(rgb(255, 255, 255), $color, $percent);
+  }
+}
+
 // @mixin padding($values) {
 //   @include _directional-property(padding, null, $values);
 // }
@@ -182,14 +191,14 @@
   border-left: $border-left $color;
 }
 
-@mixin padding($top, $right, $bottom: $top, $left: $right) {
+@mixin padding($top, $right: $top, $bottom: $top, $left: $right) {
   padding-top: $top;
   padding-right: $right;
   padding-bottom: $bottom;
   padding-left: $left;
 }
 //Margin mixin
-@mixin margin($top, $right, $bottom: $top, $left: $right) {
+@mixin margin($top, $right: $top, $bottom: $top, $left: $right) {
   margin-top: $top;
   margin-right: $right;
   margin-bottom: $bottom;
@@ -208,7 +217,14 @@
   box-shadow: $top $left $blur $spread $color;
 }
 
-@mixin button($color: #ffffff, $font-color: #111827) {
+@mixin button($size: false, $color: #ffffff, $font-color: #111827) {
+  @if $size==true {
+    @content;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $color;
   border: 0;
   border-radius: 0.5rem;
