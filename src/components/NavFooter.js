@@ -4,13 +4,18 @@ function NavFooter(props) {
   return (
     <div className="nav-footer">
       <div className="nav-buttons">
-        <button>Button</button>
-        <button>Button</button>
-        <button>Button</button>
-        <button>Button</button>
+        <button>Nav Button</button>
+        <button>Nav Button</button>
+        <button>Nav Button</button>
+        <button>Nav Button</button>
       </div>
       <div className="copyright">
-        <p>Copyright Footer</p>
+        <p>Copyright Info:</p>
+        <p>
+          {props.copyrightInfo === null
+            ? "-Please log in to see info-"
+            : props.copyrightInfo}
+        </p>
       </div>
     </div>
   );

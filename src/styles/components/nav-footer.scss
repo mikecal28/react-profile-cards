@@ -5,22 +5,28 @@
   color: $black;
   @include fxd-position(null, null, 0px);
   z-index: 2;
+  @include border($gold-crayola, 2px solid, null, null, null);
   // box-shadow: rgba(0, 0, 0, 0.45) 0px -25px 15px -20px;
 
   .nav-buttons {
     @include flex(rn);
     @include padding(null, 5%, null, null);
-    gap: 1px;
-    @include margin(5px, null);
+    gap: 2px;
+    @include margin(5px, auto, 5px, auto);
 
     button {
-      @include button(false, $han-blue);
-      color: $black;
+      @include button(true, $han-blue) {
+        width: min(13vw, 110px);
+        height: 40px;
+      }
+      color: black;
+      @include border(lighten($black-coral, 30%), 1px solid);
     }
   }
 
   .copyright {
-    @include flex();
+    @include flex(c);
+    gap: 10px;
     @include box(70%, 100%);
     border: 3px solid $han-blue;
     color: $han-blue;

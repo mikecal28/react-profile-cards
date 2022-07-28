@@ -41,7 +41,7 @@
 // Font Sizing
 
 @function calculateRem($size) {
-  $remSize: $size / 16px;
+  $remSize: calc($size / 16px);
   @return $remSize * 1rem;
 }
 
@@ -169,14 +169,6 @@
     @return mix(rgb(255, 255, 255), $color, $percent);
   }
 }
-
-// @mixin padding($values) {
-//   @include _directional-property(padding, null, $values);
-// }
-
-// @mixin margin($values) {
-//   @include _directional-property(margin, null, $values);
-// }
 
 @mixin border(
   $color: black,

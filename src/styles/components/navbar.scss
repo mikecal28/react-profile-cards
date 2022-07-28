@@ -6,22 +6,41 @@
   @include padding(20px, 200px, null, 20px);
   background-color: $black;
   color: $gold-crayola;
+  @include border($gold-crayola, null, null, 2px solid, null);
   // box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
   .logo {
     @include padding(5px, null, 5px, null);
     @include border($gold-crayola, 2px solid, null, 2px solid, null);
+    margin-right: 20px;
+    white-space: nowrap;
+    p {
+      font-size: min(1.75vw, 1rem);
+    }
   }
 
   .nav-buttons {
     @include flex(rn);
     align-self: flex-end;
-    gap: 1px;
+    gap: 2px;
     margin-bottom: 5px;
+    // @include abs-position(45%, 45%, null, 40%);
 
     button {
-      @include button(false, $han-blue);
-      color: $black;
+      @include button(true, $han-blue) {
+        width: min(13vw, 110px);
+        height: 40px;
+      }
+      color: black;
+      @include border(lighten($black-coral, 30%), 1px solid);
+    }
+  }
+  .user-name {
+    white-space: nowrap;
+    width: 50px;
+    margin-left: 20px;
+    &:hover {
+      cursor: pointer;
     }
   }
 }

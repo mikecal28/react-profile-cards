@@ -7,13 +7,13 @@ function Navbar(props) {
         <p>Descriptive Logo</p>
       </div>
       <div className="nav-buttons">
-        <button>Button</button>
-        <button>Button</button>
-        <button>Button</button>
-        <button>Button</button>
+        <button>Nav Button</button>
+        <button>Nav Button</button>
+        <button>Nav Button</button>
+        <button>Nav Button</button>
       </div>
-      <div className="user-name">
-        <p>User Name</p>
+      <div className="user-name" onClick={() => props.handleClick()}>
+        <p>{props.userName}</p>
       </div>
     </div>
   );

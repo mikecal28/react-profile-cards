@@ -13,15 +13,28 @@ class ProfileCard extends Component {
   }
   render() {
     return (
-      <div className="profile-card-wrapper">
-        <div className="profile-card">
-          <div className="image-wrapper">
-            <img src={this.state.photo} alt={this.state.alt}></img>
+      <div className="individual-card-container">
+        <div className="profile-card-wrapper">
+          <div className="profile-card">
+            <div className="image-border">
+              <div className="image-wrapper">
+                <img src={this.state.photo} alt={this.state.alt}></img>
+              </div>
+            </div>
+            <h3>{this.state.name}</h3>
+            <div className="description">
+              <p>{this.state.description}</p>
+            </div>
           </div>
-          <h3>{this.state.name}</h3>
-          <p>{this.state.description}</p>
+          <button
+            onClick={() => {
+              console.log(this.state.name);
+              alert(this.state.name);
+            }}
+          >
+            Action
+          </button>
         </div>
-        <button>Action</button>
       </div>
     );
   }

@@ -1,17 +1,20 @@
 const ProfileData = [
   {
+    id: 1,
     name: "Han Solo",
     photo: "/assets/han_solo.jpeg",
     alt: "Portrait of Han Solo",
     description: '"Never tell me the odds!"',
   },
   {
+    id: 2,
     name: "Luke Skywalker",
     photo: "/assets/luke_skywalker.jpeg",
     alt: "",
     description: `“Your thoughts betray you, Father. I feel the good in you, the conflict.”`,
   },
   {
+    id: 3,
     name: "Leia Organa",
     photo: "/assets/leia_organa.webp",
     alt: "",
@@ -19,6 +22,7 @@ const ProfileData = [
       '"I would rather be a monster that believes in something, that would sacrifice everything to make the galaxy better, than be someone who sits on the sidelines and watches as if it has no consequences to them."',
   },
   {
+    id: 4,
     name: "Anakin Skywalker",
     photo: "/assets/anakin_skywalker.jpeg",
     alt: "",
@@ -26,6 +30,7 @@ const ProfileData = [
       '"Sometimes we must let go of our pride and do what is requested of us." ',
   },
   {
+    id: 5,
     name: "Obi-Wan Kenobi",
     photo: "/assets/obi-wan_kenobi.webp",
     alt: "",
@@ -33,6 +38,7 @@ const ProfileData = [
       '"You can kill me, but you will never destroy me. It takes strength to resist the dark side. Only the weak embrace it."',
   },
   {
+    id: 6,
     name: "Mace Windu",
     photo: "/assets/mace_windu.jpeg",
     alt: "",
@@ -40,24 +46,28 @@ const ProfileData = [
       '...serve a better purpose than spreading the mindless violence and chaos which you have inflicted upon the galaxy."',
   },
   {
+    id: 7,
     name: "Qui-Gon Jinn",
     photo: "/assets/qui-gon_jinn.webp",
     alt: "",
     description: `"It matters which side we choose. Even if there will never be more light than darkness. Even if there can be no more joy in the galaxy than there is pain. For every action we undertake, for every word we speak, for every life we touch, it matters. I don't turn toward the light because it means someday I'll win some sort of cosmic game. I turn toward it because it is the light."`,
   },
   {
+    id: 8,
     name: "Jar Jar Binks",
     photo: "/assets/jar-jar_binks.jpeg",
     alt: "",
     description: `“Millions will be starvin' and dyin' without your help.”`,
   },
   {
+    id: 9,
     name: "Padme Amidala",
     photo: "/assets/padme_amidala.jpeg",
     alt: "",
     description: `"To those who act as agents of chaos, I say this: I stand resolute and unyielding. And if you strike my voice down, know that a chorus of thousands shall rise up in its place, for you have no dominion over the righteous. We are the defenders of truth."`,
   },
   {
+    id: 10,
     name: "Minch Yoda",
     photo: "/assets/minch_yoda.webp",
     alt: "",

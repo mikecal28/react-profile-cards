@@ -1,43 +1,87 @@
-.profile-card-wrapper {
-  max-height: 480px;
-  @include flex(cn);
+.individual-card-container {
+  flex: 1 0 20%;
+  @include flex();
+  @include padding(null, 5px);
 
-  .profile-card {
-    min-height: 380px;
-    max-width: 240px;
-    @include flex(cn, flex-start);
-    @include padding(5px, 15px, 5px, 15px);
-    @include margin(5px);
-    @include border(shade($gold-crayola, 30%));
-    // background-color: shade($black, 10%);
-    background-color: $auburn;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  .profile-card-wrapper {
+    justify-self: center;
+    background-color: lighten($black, 10%);
+    max-height: 520px;
+    @include border($han-blue);
+    @include flex(cn);
+    min-width: 270px;
+    max-width: 270px;
+    @include padding(15px, null, 10px, null);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
-    .image-wrapper {
-      @include box(250px);
-      clip-path: ellipse(35% 40% at 50% 50%);
+    .profile-card {
+      font-weight: bold;
+      min-height: 430px;
+      max-width: 215px;
+      @include flex(cn, flex-start);
+      @include padding(null, 15px, 5px, 15px);
+      @include margin(5px);
+      @include border(shade($gold-crayola, 30%));
+      background-color: $auburn;
+      box-shadow: rgba(50, 50, 93, 0.65) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.7) 0px 8px 16px -8px;
 
-      img {
+      .image-border {
+        background-color: black;
+        clip-path: ellipse(35% 40% at 50% 50%);
         @include box(250px);
-        object-fit: cover;
+
+        .image-wrapper {
+          @include box(240px);
+          clip-path: ellipse(35% 40% at 50% 50%);
+          @include rel-position(5px, -5px);
+
+          img {
+            @include box(245px);
+            object-fit: cover;
+          }
+        }
+      }
+
+      h3 {
+        @include font-size(20px);
+        letter-spacing: 2px;
+        color: lighten($gold-crayola, 30%);
+        -webkit-text-stroke: 1px $black;
+        white-space: nowrap;
+      }
+
+      .description {
+        @include border($gold-crayola, 5px solid, 5px solid, 5px solid);
+        background-color: $black;
+        margin-top: 10px;
+        margin-bottom: 6px;
+        @include padding(15px, 10px);
+
+        p {
+          color: $han-blue;
+          overscroll-behavior: none;
+          height: 100px;
+          overflow-y: scroll;
+          mask: linear-gradient(to top, transparent 0%, #fff 10%);
+          padding-bottom: 10px;
+        }
       }
     }
 
-    p {
-      overscroll-behavior: none;
-      height: 100px;
-      overflow-y: scroll;
-      mask: linear-gradient(to top, transparent 20%, #fff 80%);
-      padding-bottom: 30px;
-    }
-  }
+    button {
+      @include button(true, $black) {
+        @include box(5em, 2em);
+      }
+      box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+      @include border($gold-crayola);
+      color: $gold-crayola;
+      @include margin(40px, null, -60px, null);
 
-  button {
-    @include button(true, $black) {
-      @include box(5em, 2em);
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
     }
-    color: $gold-crayola;
-    @include margin(40px, null, 20px, null);
   }
 }

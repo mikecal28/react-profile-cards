@@ -1,6 +1,6 @@
 html {
   @include box(100%);
-  background-color: shade($gold-crayola, 15%);
+  background-color: $black-coral;
   scroll-behavior: smooth;
 
   ::-webkit-scrollbar {
@@ -42,13 +42,15 @@ html {
           grid-area: body;
           background-color: $black-coral;
           @include flex();
-          @include padding(20px, null, 20px, null);
-          row-gap: 40px;
+          @include padding(50px, null, 90px);
+          row-gap: 100px;
+          // column-gap: 8px;
         }
 
         .footer-offset {
           grid-area: footer;
           @include box(100%, 15%);
+          background-color: $black-coral;
         }
       }
     }
